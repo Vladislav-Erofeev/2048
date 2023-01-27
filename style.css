@@ -1,0 +1,76 @@
+body {
+    background-color: #bbada0;
+}
+
+#main_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /*background-color: #f39463;*/
+}
+
+#main_area p {
+    font-size: 30pt;
+    color: #564c48;
+}
+
+table {
+    border-spacing: 10px;
+}
+
+table td {
+    background-color: #cabeb3;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 30pt;
+    font-weight: 600;
+    border-radius: 20px;
+    color: #776e65;
+    transition: 0.3s ease-in-out;
+}
+
+#back_blur {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    display: none;
+    transition: 0.3s ease-in-out;
+}
+
+#end {
+    display: none;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    background-color: #6c645a;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    transition: 0.3s ease-in-out;
+}
+
+#restart {
+    width: 200px;
+    height: 50px;
+    font-size: 16pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: #f52a4f;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+#restart:hover {
+    background-color: #bd223e;
+}

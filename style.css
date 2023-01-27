@@ -1,5 +1,6 @@
 body {
     background-color: #bbada0;
+    overflow: hidden;
 }
 
 #main_area {

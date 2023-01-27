@@ -8,15 +8,38 @@ draw(array)
 document.addEventListener("keydown", (event) => {
     if(event.key == "ArrowUp") {
         moveUp(array);
-        draw(array)
     } else if(event.key == "ArrowDown") {
         moveDown(array);
-        draw(array)
     } else if(event.key == "ArrowLeft") {
         moveLeft(array)
-        draw(array)
     } else if(event.key == "ArrowRight") {
         moveRight(array)
-        draw(array)
     }
+    draw(array)
 })
+
+let eventStart = null;
+let eventEnd = null;
+
+document.addEventListener("touchstart", function (e) {
+    eventStart = e;
+});
+document.addEventListener("touchmove", function (e) {
+    eventEnd = e;
+});
+document.addEventListener("touchend", function (e) {
+    let deltaX = eventEnd.touches[0].pageX - eventStart.touches[0].pageX;
+    let deltaY = eventEnd.touches[0].pageY - eventStart.touches[0].pageY;
+    if(Math.abs(deltaX) > Math.abs(deltaY)) {
+        if(deltaX > 0)
+            moveRight(array)
+        else
+            moveLeft(array)
+    } else {
+        if(deltaY > 0)
+            moveDown(array)
+        else
+            moveUp(array)
+    }
+    draw(array)
+});
